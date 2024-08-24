@@ -1,3 +1,21 @@
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: rgb(33, 33, 33);
+    }
+
+    .main-container {
+        display: block;
+        margin-top: 500px;
+        margin-left: 375px;
+        box-shadow: none;
+    }
+
+    .lefthand, .righthand {
+        margin-right: -100px;
+        border-radius: 0px 0px 0px 0px;
+    }
+}
+
 body {
     background-color: rgb(0, 24, 0);
 }
@@ -100,22 +118,4 @@ h1, h2, h3, p, button {
 
 a:visited {
     color: rgb(184, 0, 184);
-}
-
-@media only screen and (max-width: 768px) {
-    body {
-        background-color: rgb(33, 33, 33);
-    }
-
-    .main-container {
-        display: block;
-        margin-top: 500px;
-        margin-left: 375px;
-        box-shadow: none;
-    }
-
-    .lefthand, .righthand {
-        margin-right: -100px;
-        border-radius: 0px;
-    }
 }
