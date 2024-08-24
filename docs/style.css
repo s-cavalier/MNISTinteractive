@@ -51,6 +51,7 @@ h1, h2, h3, p, button {
     background-color: black;
     margin-left: auto;
     margin-right: auto;
+    touch-action: none;
 }
 
 .lefthand #reset {
@@ -99,4 +100,15 @@ h1, h2, h3, p, button {
 
 a:visited {
     color: rgb(184, 0, 184);
+}
+
+@media only screen and (max-width: 768px) {
+    .main-container {
+        display: block;
+        margin-top: 375px;
+    }
+
+    .lefthand, .righthand {
+        margin-right: -100px;
+    }
 }

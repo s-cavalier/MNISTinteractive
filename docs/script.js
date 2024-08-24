@@ -79,7 +79,10 @@ let pixels = Array(28);
 let mdown = false;
 document.addEventListener("mousedown", function() { mdown = true; });
 document.addEventListener("mouseup", function() { mdown = false; });
-document.getElementById("reset").addEventListener( "click", function() { clearCanvas() } );
+document.getElementById("reset").addEventListener( "click", function() { clearCanvas(); } );
+document.addEventListener("touchmove", (event) => { 
+    for (let i = 0; i < event.touches.length; i++) manageTouch( event.touches[i].clientX, event.touches[i].clientY );
+ });
 
 for (let i = 0; i < rows.length; i++) {
     pixels[i] = Array(28);
@@ -89,6 +92,25 @@ for (let i = 0; i < rows.length; i++) {
         pixels[i][j].element.addEventListener( "mouseover", function() { if (mdown) draw(i, j);  });
         pixels[i][j].element.addEventListener( "mousedown", function() { draw(i, j); });
         pixels[i][j].element.setAttribute("draggable", false);
+    }
+}
+
+let old_on;
+function manageTouch(x, y) {
+    let finder = document.elementFromPoint(x, y);
+    if (old_on != undefined && old_on === finder) return;
+
+    let exit = false;
+    for (let i = 0; i < pixels.length; i++) {
+        for (let j = 0; j < pixels[i].length; j++) {
+            if (finder === pixels[i][j].element) {
+                old_on = finder;
+                draw(i, j);
+                exit = true;
+                break;
+            }
+        }
+        if (exit) break;
     }
 }
 
