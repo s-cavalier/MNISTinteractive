@@ -110,6 +110,7 @@ a:visited {
     .main-container {
         display: block;
         margin-top: 500px;
+        margin-left: 100px;
         box-shadow: none;
     }
 
