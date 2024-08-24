@@ -74,6 +74,7 @@ class Matrix {
 
 const rows = document.getElementsByClassName("row");
 let guesses = document.getElementById("guesses").getElementsByTagName("b");
+let marks = document.getElementById("guesses").getElementsByTagName("mark");
 for (let i = 0; i < guesses.length; i++) guesses[i].style.width = "150px";
 
 let pixels = Array(28);
@@ -160,10 +161,16 @@ function feedforward() {
         sigInPlace(x);
     }
 
+    let max = -1.0;
+    let ind = 0;
     for (let i = 0; i < guesses.length; i++) {
         guesses[i].style.width = (150 * (1 - x.get_at(i, 0))) + "px";
+        marks[i].textContent = "";
+        if (x.get_at(i, 0) <= max) continue;
+        max = x.get_at(i, 0);
+        ind = i;
     }
-
+    marks[ind].textContent = "<";
 }
 
 
@@ -174,7 +181,10 @@ function clearCanvas() {
         })
     });
 
-    for (let i = 0; i < guesses.length; i++) guesses[i].style.width = "150px";
+    for (let i = 0; i < guesses.length; i++) {
+        guesses[i].style.width = "150px";
+        marks[i].textContent = "";
+    }
 
 }
 
