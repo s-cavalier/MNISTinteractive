@@ -1,0 +1,102 @@
+body {
+    background-color: rgb(0, 24, 0);
+}
+
+h1, h2, h3, p, button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.main-container {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.35), 10px 10px 20px 20px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+.lefthand {
+    width: 800px;
+    height: 800px;
+    background-color: rgb(33, 33, 33);
+    border-radius: 100px 0px 0px 100px;
+}
+
+.lefthand h2, .righthand h2 {
+    -webkit-text-stroke: 1px black;
+    font-size: 30pt;
+}
+
+.righthand {
+    width: 800px;
+    height: 800px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 0px 100px 100px 0px;
+}
+
+:root {
+    --canvas-size: 500.0px;
+}
+
+.canvas {
+    border: 5px solid rgb(196, 196, 196);
+    width: var(--canvas-size);
+    height: var(--canvas-size);
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lefthand #reset {
+    border: none;
+    background-color: rgb(10, 10, 10);
+    font-size: 18pt;
+    border-radius: 5px;
+    padding: 15px 15px 15px 15px;
+}
+
+.lefthand #reset:hover {
+    border: none;
+    background-color: rgb(10, 10, 10);
+    font-size: 18pt;
+    color: rgb(200, 200, 200);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 15px 15px 15px 15px;
+}
+
+.row {
+    display: flex;
+}
+
+.canvas .row .col {
+    width: calc(var(--canvas-size) / 28);
+    height: calc(var(--canvas-size) / 28);
+}
+
+.canvas:hover {
+    cursor: crosshair;
+}
+
+#guesses {
+    margin-top: 20px;
+}
+
+#guesses h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.small {
+    font-size: 8pt;
+}
+
+a:visited {
+    color: rgb(184, 0, 184);
+}
