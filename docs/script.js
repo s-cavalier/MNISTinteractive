@@ -115,18 +115,18 @@ function manageTouch(x, y) {
 }
 
 function draw(r, c) {
-    pixels[r][c].sumColors(255, 255, 255, 0.5);
+    pixels[r][c].sumColors(255, 255, 255, 0.7);
     if (r > 0) {
-        pixels[r - 1][c].sumColors(255, 255, 255, 0.25);
+        pixels[r - 1][c].sumColors(255, 255, 255, 0.35);
     }
     if (r < pixels.length - 1) {
-        pixels[r + 1][c].sumColors(255, 255, 255, 0.25);
+        pixels[r + 1][c].sumColors(255, 255, 255, 0.35);
     }
     if (c > 0) {
-        pixels[r][c - 1].sumColors(255, 255, 255, 0.25);
+        pixels[r][c - 1].sumColors(255, 255, 255, 0.35);
     }
     if (c < pixels[r].length - 1) {
-        pixels[r][c + 1].sumColors(255, 255, 255, 0.25);
+        pixels[r][c + 1].sumColors(255, 255, 255, 0.35);
     }
 
     feedforward();
