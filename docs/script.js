@@ -74,6 +74,8 @@ class Matrix {
 
 const rows = document.getElementsByClassName("row");
 let guesses = document.getElementById("guesses").getElementsByTagName("b");
+for (let i = 0; i < guesses.length; i++) guesses[i].style.width = "150px";
+
 let pixels = Array(28);
 
 let mdown = false;
@@ -139,34 +141,6 @@ function sigInPlace( matrix ) {
     }
 }
 
-function accuracyToString( num ) {
-    let rounded = Math.floor( 10 * num );
-    switch (rounded) {
-        case 0:
-            return { text: "Impossible", color: "rgb(255, 0, 0)" };
-        case 1:
-            return { text: "Improbable", color: "rgb(204, 0, 0)" };
-        case 2:
-            return { text: "Unlikely", color: "rgb(153, 0, 0)" };
-        case 3:
-            return { text: "Nope", color: "rgb(102, 0, 0)" };
-        case 4:
-            return { text: "Nah", color: "rgb(51, 0, 0)" };
-        case 5:
-            return { text: "Maybe", color: "rgb(0, 51, 0)" };
-        case 6:
-            return { text: "Possibly", color: "rgb(0, 102, 0)" };
-        case 7:
-            return { text: "Perhaps", color: "rgb(0, 153, 0)" };
-        case 8:
-            return { text: "Likely", color: "rgb(0, 204, 0)" };
-        case 9:
-            return { text: "Absolutely", color: "rgb(0, 255, 0)" };
-        default:
-            return { text: "?", color: "blue" };
-    }
-}
-
 function feedforward() {
     // Convert pixel grid into vector
     let x = new Matrix(784, 1);
@@ -187,9 +161,7 @@ function feedforward() {
     }
 
     for (let i = 0; i < guesses.length; i++) {
-        let output_style = accuracyToString( x.get_at(i, 0) );
-        guesses[i].textContent = output_style.text;
-        guesses[i].style.color = output_style.color;
+        guesses[i].style.width = (150 * (1 - x.get_at(i, 0))) + "px";
     }
 
 }
@@ -202,7 +174,7 @@ function clearCanvas() {
         })
     });
 
-    for (let i = 0; i < guesses.length; i++) guesses[i].textContent = "";
+    for (let i = 0; i < guesses.length; i++) guesses[i].style.width = "150px";
 
 }
 

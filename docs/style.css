@@ -87,11 +87,36 @@ h1, h2, h3, p, button {
 
 #guesses {
     margin-top: 20px;
+    width:fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #guesses h2 {
     margin-top: 0px;
     margin-bottom: 20px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+}
+
+#guesses div {
+    border: 2px silver solid;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 25px;
+    width: 150px;
+    height: 25px;
+    background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 255, 0), rgb(0, 255, 0));
+}
+
+#guesses div b {
+    display: block;
+    height: inherit;
+    margin-left: auto;
+    margin-right: 0px;
+    background-color: rgb(22, 22, 22);
 }
 
 .small {
