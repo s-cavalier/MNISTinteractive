@@ -103,6 +103,10 @@ h1, h2, h3, p, button, mark {
     display: flex;
 }
 
+#rightheader {
+    margin-bottom: 0px;
+}
+
 #guesses div {
     border: 2px silver solid;
     margin-top: auto;

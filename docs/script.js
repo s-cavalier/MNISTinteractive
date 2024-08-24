@@ -76,6 +76,9 @@ const rows = document.getElementsByClassName("row");
 let guesses = document.getElementById("guesses").getElementsByTagName("b");
 let marks = document.getElementById("guesses").getElementsByTagName("mark");
 for (let i = 0; i < guesses.length; i++) guesses[i].style.width = "150px";
+let rightheader = document.getElementById("rightheader");
+const rh_text = "Computer's Guess: ";
+rightheader.textContent = rh_text;
 
 let pixels = Array(28);
 
@@ -171,6 +174,7 @@ function feedforward() {
         ind = i;
     }
     marks[ind].textContent = "<";
+    rightheader.textContent = rh_text + ind;
 }
 
 
@@ -185,6 +189,8 @@ function clearCanvas() {
         guesses[i].style.width = "150px";
         marks[i].textContent = "";
     }
+
+    rightheader.textContent = rh_text;
 
 }
 
