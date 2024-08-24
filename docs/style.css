@@ -103,12 +103,19 @@ a:visited {
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        background-color: rgb(33, 33, 33);
+    }
+
     .main-container {
         display: block;
-        margin-top: 375px;
+        margin-top: 500px;
+        margin-left: 375px;
+        box-shadow: none;
     }
 
     .lefthand, .righthand {
         margin-right: -100px;
+        border-radius: 0px;
     }
 }
