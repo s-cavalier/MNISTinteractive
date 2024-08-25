@@ -92,12 +92,10 @@ document.addEventListener("touchmove", (event) => {
 
 for (let i = 0; i < rows.length; i++) {
     pixels[i] = Array(28);
-    rows[i].setAttribute("draggable", false);
     for (let j = 0; j < rows[i].childElementCount; j++) {
         pixels[i][j] = new Pixel(rows[i].children[j]);
         pixels[i][j].element.addEventListener( "mouseover", function() { if (mdown) draw(i, j);  });
-        pixels[i][j].element.addEventListener( "mousedown", function() { draw(i, j); });
-        pixels[i][j].element.setAttribute("draggable", false);
+        pixels[i][j].element.addEventListener( "mousedown", function( event ) { draw(i, j); event.preventDefault(); });
     }
 }
 
